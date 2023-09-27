@@ -23,7 +23,7 @@ void *heap_top(Heap *pq) {
   return (void *)pq->heapArray[0].data;
 }
 
-void heap_push(Heap *pq, void *data, int priority) {}
+void heap_push(Heap *pq, void *data, int priority) { if }
 
 void heap_pop(Heap *pq) {}
 

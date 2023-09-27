@@ -45,3 +45,14 @@ Wed 27 Sep 2023 09:53:44 PM UTC:
  tests:  1|3
 total_score: 10/70
 e41ea41
+Wed 27 Sep 2023 09:59:07 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:26:57: error: expected ‘(’ before ‘}’ token
+   26 | void heap_push(Heap *pq, void *data, int priority) { if }
+      |                                                         ^
+      |                                                         (
+Compilation failed
+9b73031
