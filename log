@@ -142,3 +142,17 @@ test.c:6:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 00974c1
+Thu 28 Sep 2023 01:52:42 AM UTC: 
+ heap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:37:7: error: unused variable ‘sup’ [-Werror=unused-variable]
+   37 |   int sup = pq->size - 1;
+      |       ^~~
+heap.c:36:7: error: unused variable ‘inf’ [-Werror=unused-variable]
+   36 |   int inf = pq->size;
+      |       ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+7e8b6ea
