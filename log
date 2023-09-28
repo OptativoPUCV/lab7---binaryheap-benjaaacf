@@ -76,3 +76,19 @@ heap.c:30:71: error: expected ‘;’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 4357673
+Thu 28 Sep 2023 01:42:50 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:31:3: error: conversion to non-scalar type requested
+   31 |   }
+      |   ^
+heap.c:30:71: error: expected ‘;’ before ‘}’ token
+   30 |         (heapElem)realloc(pq->heapArray, sizeof(heapElem) * pq->capac)
+      |                                                                       ^
+      |                                                                       ;
+   31 |   }
+      |   ~                                                                    
+Compilation failed
+ab55c41
