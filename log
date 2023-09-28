@@ -156,3 +156,9 @@ heap.c:36:7: error: unused variable ‘inf’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 7e8b6ea
+Thu 28 Sep 2023 02:09:36 AM UTC: 
+ heap.c | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+ tests:  6|2
+total_score: 35/70
+aae4812
