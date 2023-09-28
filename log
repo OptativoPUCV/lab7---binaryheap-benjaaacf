@@ -56,3 +56,23 @@ heap.c:26:57: error: expected ‘(’ before ‘}’ token
       |                                                         (
 Compilation failed
 9b73031
+Thu 28 Sep 2023 01:42:41 AM UTC: 
+ heap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:28:19: error: assignment to ‘heapElem *’ {aka ‘struct nodo *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+   28 |     pq->heapArray = (pq->capac * 2) + 1;
+      |                   ^
+heap.c:31:3: error: conversion to non-scalar type requested
+   31 |   }
+      |   ^
+heap.c:30:71: error: expected ‘;’ before ‘}’ token
+   30 |         (heapElem)realloc(pq->heapArray, sizeof(heapElem) * pq->capac)
+      |                                                                       ^
+      |                                                                       ;
+   31 |   }
+      |   ~                                                                    
+cc1: all warnings being treated as errors
+Compilation failed
+4357673
