@@ -52,7 +52,7 @@ void heap_push(Heap *pq, void *data, int priority) {
   pq->size++;
 }
 
-void heap_pop(Heap *pq) {
+/*void heap_pop(Heap *pq) {
 
   pq->size--;
   pq->heapArray[0] = pq->heapArray[pq->size];
@@ -70,9 +70,43 @@ void heap_pop(Heap *pq) {
     pq->heapArray[(current - 1) / 2] = pq->heapArray[current];
     pq->heapArray[current] = aux;
     current = 2 * current + 1;
-    {
-      
+  }
+}*/
+
+void heap_pop(Heap *pq) {
+  if (pq->size == 0) {
+
+    return;
+  }
+
+  pq->size--;
+  pq->heapArray[0] = pq->heapArray[pq->size];
+
+  int current = 0;
+  int left_child = 1;
+  int right_child = 2;
+
+  while (left_child <= pq->size) {
+    int max_child = left_child;
+
+    if (right_child <= pq->size && pq->heapArray[right_child].priority >
+                                       pq->heapArray[left_child].priority) {
+      max_child = right_child;
     }
+
+    if (pq->heapArray[current].priority < pq->heapArray[max_child].priority) {
+
+      heapElem aux = pq->heapArray[current];
+      pq->heapArray[current] = pq->heapArray[max_child];
+      pq->heapArray[max_child] = aux;
+    } else {
+
+      break;
+    }
+
+    current = max_child;
+    left_child = 2 * current + 1;
+    right_child = 2 * current + 2;
   }
 }
 
