@@ -52,7 +52,10 @@ void heap_push(Heap *pq, void *data, int priority) {
   pq->size++;
 }
 
-void heap_pop(Heap *pq) {}
+void heap_pop(Heap *pq) {
+  pq->size--;
+  pq->heapArray[0] = pq->heapArray[pq->size];
+}
 
 Heap *createHeap() {
   Heap *hp = (Heap *)malloc(sizeof(Heap));
