@@ -55,6 +55,15 @@ void heap_push(Heap *pq, void *data, int priority) {
 void heap_pop(Heap *pq) {
   pq->size--;
   pq->heapArray[0] = pq->heapArray[pq->size];
+
+  int pr = pq->heapArray[0].priority;
+  int current = 1;
+
+  while (
+      ((current <= pq->size) && (pq->heapArray[current].priority > pr)) ||
+      ((current <= pq->size) && (pq->heapArray[current + 1].priority > pr))) {
+    heapElem aux = pq->heapArray[(current - 1) / 2];
+  }
 }
 
 Heap *createHeap() {
