@@ -63,6 +63,12 @@ void heap_pop(Heap *pq) {
       ((current <= pq->size) && (pq->heapArray[current].priority > pr)) ||
       ((current <= pq->size) && (pq->heapArray[current + 1].priority > pr))) {
     heapElem aux = pq->heapArray[(current - 1) / 2];
+    if (pq->heapArray[current + 1].priority > pr) {
+      current++;
+    }
+    pq->heapArray[(current - 1) / 2] = pq->heapArray[current];
+    pq->heapArray[current] = aux;
+    current = 2 * current + 1;
   }
 }
 
