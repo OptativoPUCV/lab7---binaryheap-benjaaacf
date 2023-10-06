@@ -60,4 +60,6 @@ Heap *createHeap() {
   hp->capac = 3;
   hp->size = 0;
   hp->heapArray = (heapElem *)malloc(3 * sizeof(heapElem));
+
+  return hp;
 }
