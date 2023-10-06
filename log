@@ -162,3 +162,24 @@ Thu 28 Sep 2023 02:09:36 AM UTC:
  tests:  6|2
 total_score: 35/70
 aae4812
+Fri 06 Oct 2023 01:19:55 AM UTC: 
+ heap.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:63:57: error: expected ‘)’ before ‘;’ token
+   63 |   hp -> heapArray = (heapElem*)malloc(3*sizeof(heapElem);
+      |                                      ~                  ^
+      |                                                         )
+heap.c:63:58: error: expected ‘;’ before ‘}’ token
+   63 |   hp -> heapArray = (heapElem*)malloc(3*sizeof(heapElem);
+      |                                                          ^
+      |                                                          ;
+   64 | }
+      | ~                                                         
+heap.c:64:1: error: control reaches end of non-void function [-Werror=return-type]
+   64 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+67f4898
